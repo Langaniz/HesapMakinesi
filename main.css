@@ -10,14 +10,14 @@ body{
     font-size: 1.2rem;
     display: flex;
     align-items: center;
-    justify-content: center;/*yatayda ortalar*/
+    justify-content: center;
     height: 100vh;
 }
 
 .grid {
-    border: 1px solid #ccc; /* border 1 pixel solid(düz) ve #ccc renginde yapar*/
-    border-radius: 5px;/* border kenarlarını 5px yumuşatır*/
-    width: 400px;/*yüksekliği 400px*/
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    width: 400px;
 }
 
 
@@ -28,7 +28,7 @@ body{
     border: none;
     background-color: #252525;
     color: #fff;
-    text-align: right;/*içerisindeki texti sağa hizalar*/
+    text-align: right;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -44,8 +44,8 @@ button{
 
 .grid-keys {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);/*4 sütüna ayır ve her biri eşit olsun*/
-    grid-gap: 20px;/*aralarında 20px boşluk bırakır*/
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
     padding: 20px;
 }
 
@@ -72,7 +72,7 @@ button:hover {
     border-color: #337cac;
     color: #fff;
     height: 100%;
-    grid-area: 2/4/6;/*2.satırdan ve 4. sütundan başla 6.satırda bitir*/
+    grid-area: 2/4/6;
 }
 
 .equal-sign:hover {
@@ -80,7 +80,7 @@ button:hover {
 }
 
 .grid-input:focus {
-    outline: none;/*grid-input focus olduğunda kenarlığını yok eder*/
+    outline: none;
 }
 
 .inp{
