@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;/*Öğenin genişliği ve yüksekliği, border ve paddingi içerecek şekilde hesaplanır*/
+}
+
+html {
+    font-size: 10px;
+}
+
+body{
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;/*yatayda ortalar*/
+    height: 100vh;
+}
+
+.grid {
+    border: 1px solid #ccc; /* border 1 pixel solid(düz) ve #ccc renginde yapar*/
+    border-radius: 5px;/* border kenarlarını 5px yumuşatır*/
+    width: 400px;/*yüksekliği 400px*/
+}
+
+
+.grid-input {
+    width: 100%;
+    font-size: 4rem;
+    height: 70px;
+    border: none;
+    background-color: #252525;
+    color: #fff;
+    text-align: right;/*içerisindeki texti sağa hizalar*/
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+button{
+    height: 50px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.grid-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);/*4 sütüna ayır ve her biri eşit olsun*/
+    grid-gap: 20px;/*aralarında 20px boşluk bırakır*/
+    padding: 20px;
+}
+
+button:hover {
+    background-color: #eaeaea;
+}
+
+.operator {
+    color: #337cac;
+}
+
+.clear {
+    background-color: #f0595f;
+    border-color: #b0353a;
+    color: #fff;
+}
+
+.clear:hover {
+    background-color: #f17377;
+}
+
+.equal-sign {
+    background-color: #4e9ed4;
+    border-color: #337cac;
+    color: #fff;
+    height: 100%;
+    grid-area: 2/4/6;/*2.satırdan ve 4. sütundan başla 6.satırda bitir*/
+}
+
+.equal-sign:hover {
+    background-color: #2e86c0;
+}
+
+.grid-input:focus {
+    outline: none;/*grid-input focus olduğunda kenarlığını yok eder*/
+}
+
+.inp{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgb(250, 213, 213);
+    border-radius: 5px;
+    background-color: rgb(255, 250, 243);
+}
