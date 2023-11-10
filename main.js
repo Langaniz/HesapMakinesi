@@ -1,49 +1,49 @@
-const display = document.querySelector('.grid-input');//classı 'grid-input' olan öğeyi display değişkenine atar.
-const keys = document.querySelector('.grid-keys');//classı 'grid-keys' olan öğeyi keys değişkenine atar.
+const display = document.querySelector('.grid-input');
+const keys = document.querySelector('.grid-keys');
 
-let displayValue = '0';//displayValue değişkenine 0 değeri atanır.
-let firstValue = null;//firstValue değişkenine null değeri atanır.
-let operator = null;//operator değişkenine null değeri atanır.
-let waiting = false;//waiting değişkenine false değeri atanır.
+let displayValue = '0';
+let firstValue = null;
+let operator = null;
+let waiting = false;
 
-updateDisplay();//updateDisplay fonksiyonunu çağırır.
+updateDisplay();
 
-function updateDisplay() {//updateDisplay adında bir fonksiyon oluşturur.
-    display.value = displayValue;//display değişkeninin valuesuna displayValue.
+function updateDisplay() {
+    display.value = displayValue;
 }
 
-keys.addEventListener('click', function(e) {//keys e tıklandığında fonksiyonu çalıştırır.
-    const element = e.target;//e.target olayın gerçekleştiği öğeyi temsil eder ve element değişkenine atanır.
+keys.addEventListener('click', function(e) {
+    const element = e.target;
 
-    if (!element.matches('button')) return;//öğenin adının "button" olup olmadığına bakar.Eğer "button" değilse return işlevin geri kalanını çalıştırmaz.
+    if (!element.matches('button')) return;
 
-    if (element.classList.contains('operator')) {// eğer "operator" isimli bir class varsa aşağıdaki kodları çalıştırır.
-        handleOperator(element.value);//element nesnesinin value özelliğini handleOperator fonsiyonuna iletiyor.
-        displayValue += ` ${element.value} `;//displayValue adlı bir değişkenin değerine, element.value değerini aralarına bir boşluk bırakarak ekler.
-        updateDisplay();//updateDisplay fonksiyonunu çağırır.
-        return;//işlevin geri kalanını çalıştırmaz.
+    if (element.classList.contains('operator')) {
+        handleOperator(element.value);
+        displayValue += ` ${element.value} `;
+        updateDisplay();
+        return;
     }
 
-    if (element.classList.contains('decimal')) {// eğer "decimal" isimli bir class varsa aşağıdaki kodları çalıştırır.
-        inputDecimal(element.value);//element nesnesinin value özelliğini inputDecimal fonsiyonuna iletiyor.
-        updateDisplay();//updateDisplay fonksiyonunu çağırır.
-        return;//işlevin geri kalanını çalıştırmaz.
+    if (element.classList.contains('decimal')) {
+        inputDecimal(element.value);
+        updateDisplay();
+        return;
     }
 
-    if (element.classList.contains('clear')) {// eğer "clear" isimli bir class varsa aşağıdaki kodları çalıştırır.
-        clear();//clear fonskisyonunu çağırır
-        updateDisplay();//updateDisplay fonksiyonunu çağırır.
-        return;//işlevin geri kalanını çalıştırmaz.
+    if (element.classList.contains('clear')) {
+        clear();
+        updateDisplay();
+        return;
     }
 
-    if (element.classList.contains('equal-sign')) {// eğer "equal-sign" isimli bir class varsa aşağıdaki kodları çalıştırır.
-        calculateResult();//calculateResult fonksiyonunu çağırır.
-        updateDisplay();//updateDisplay fonksiyonunu çağırır.
-        return;//işlevin geri kalanını çalıştırmaz.
+    if (element.classList.contains('equal-sign')) {
+        calculateResult();
+        updateDisplay();
+        return;
     }
 
-    inputNumber(element.value);//inputNumber fonksiyonunu çağırır.
-    updateDisplay();//calculateResult fonksiyonunu çağırır.
+    inputNumber(element.value);
+    updateDisplay();
  });
 
 function handleOperator(nextOperator) {//handleOperator isimli nextOperator parametreli bir fonksiyon oluşturur.
